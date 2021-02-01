@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Coronavirus Tracker Application</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+
+<div class="container">
+
+
+    <div class="jumbotron">
+        <h1 class="display-4" th:text="${total_reported_cases}"></h1>
+        <p class="lead">Total cases reported as of today</p>
+        <hr class="my-4">
+        <p>
+            <span>New cases reported since previous day:</span>
+            <span th:text="${total_new_cases}"></span>
+        </p>
+        <h2>About This Project</h2>
+        <span>This project was meant to improve my skills in Java, Spring Boot, and Server Applications.
+            For future updates, I hope to put data visualizations and host on elasticbeanstalk.
+            </span>
+        <br>
+        <a href="https://github.com/koushikkothagal/coronavirus-tracker/tree/master/src/main/resources/templates">Source Code</a>
+        <br>
+        <a href="https://github.com/CSSEGISandData/COVID-19/blob/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv">Link to Data Source</a>
+
+    </div>
+
+<p th:text="${testName}"></p>
+    <table>
+        <tr>
+            <th>County</th>
+            <th>State</th>
+            <th>Latest Cases</th>
+            <th>Todays Cases</th>
+        </tr>
+        <tr th:each="locationStat : ${locationStats}">
+            <td th:text="${locationStat.county}"></td>
+            <td th:text="${locationStat.state}"></td>
+            <td th:text="${locationStat.latest_cases}">0</td>
+            <td th:text="${locationStat.todays_cases}">0</td>
+        </tr>
+    </table>
+</div>
+</body>
+
+</html>
