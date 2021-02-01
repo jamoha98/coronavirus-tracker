@@ -11,7 +11,7 @@ Front End: HTML, Bootstrap, Thymeleaf
 Server Code: Java
 Miscellaneous/Future: ElasticBeanstalk (for hosting), Highcharts (for data viz)
 # Additional Notes
-Will post link to final website when hosted.
 Written through IntelliJ IDE
+Java11
 # Live link to elastic beanstalk
 http://coronavirustracker-env.eba-gjrpte3a.us-east-1.elasticbeanstalk.com/
